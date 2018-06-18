@@ -1,18 +1,19 @@
-import React from 'react'
-import {  Button,Menu} from 'semantic-ui-react'
+import React from "react";
+import { Button, Menu } from "semantic-ui-react";
 
-const SignedOutMenu = ({signIn}) => {
+const SignedOutMenu = ({ signIn, register }) => {
   return (
     <Menu.Item position="right">
-              <Button onClick={signIn} basic inverted content="Login" />
-              <Button
-                basic
-                inverted
-                content="Register"
-                style={{ marginLeft: "0.5em" }}
-              />
-            </Menu.Item>
-  )
-}
+      <Button onClick={signIn} basic inverted content="Login" />
+      <Button
+        onClick={register}
+        basic
+        inverted
+        content="Register"
+        style={{ marginLeft: "0.5em" }}
+      />
+    </Menu.Item>
+  );
+};
 
-export default SignedOutMenu
+export default SignedOutMenu;

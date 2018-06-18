@@ -47,7 +47,7 @@ class EventDetailedInfo extends Component {
             <Grid.Column width={4}>
               <Button
                 onClick={this.showMapToggle}
-                color="teal"
+                color={this.state.showMap?'teal':'purple'}
                 size="tiny"
                 content={this.state.showMap?'Hide Map':'Show Map'}
               />
