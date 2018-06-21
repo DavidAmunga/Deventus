@@ -1,3 +1,4 @@
+import { toastr } from "react-redux-toastr";
 import {
   CREATE_EVENT,
   DELETE_EVENT,
@@ -12,19 +13,33 @@ import {
 import { fetchSampleData } from "../../app/data/mockApi";
 
 export const createEvent = event => {
-  return {
-    type: CREATE_EVENT,
-    payload: {
-      event
+  return async dispatch => {
+    try {
+      dispatch({
+        type: CREATE_EVENT,
+        payload: {
+          event
+        }
+      });
+      toastr.success("Success!", "Event has been created");
+    } catch (error) {
+      toastr.error("Ooops", "Something went wrong");
     }
   };
 };
 
 export const updateEvent = event => {
-  return {
-    type: UPDATE_EVENT,
-    payload: {
-      event
+  return async dispatch => {
+    try {
+      dispatch({
+        type: UPDATE_EVENT,
+        payload: {
+          event
+        }
+      });
+      toastr.success("Success!", "Event has been updated");
+    } catch (error) {
+      toastr.error("Ooops", "Something went wrong");
     }
   };
 };
