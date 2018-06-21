@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import { Grid } from "semantic-ui-react";
 import EventList from "../EventList/EventList";
 import { connect } from "react-redux";
+import { firestoreConnect } from "react-redux-firebase";
 import { deleteEvent } from "../eventActions";
 import LoadingComponent from "../../../app/layout/LoadingComponent";
-import EventActivity from '../EventActivity/EventActivity';
+import EventActivity from "../EventActivity/EventActivity";
 
 const mapStateToProps = state => ({
-  events: state.events,
+  events: state.firestore.ordered.events,
   loading: state.async.loading
 });
 const actions = {
@@ -33,7 +34,7 @@ class EventDashboard extends Component {
             )}
           </Grid.Column>
           <Grid.Column width={6}>
-              <EventActivity/>
+            <EventActivity />
           </Grid.Column>
         </Grid>
       </div>
@@ -43,4 +44,4 @@ class EventDashboard extends Component {
 export default connect(
   mapStateToProps,
   actions
-)(EventDashboard);
+)(firestoreConnect([{ collection: "events" }])(EventDashboard));
