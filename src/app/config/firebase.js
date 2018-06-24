@@ -7,7 +7,7 @@ var firebaseConfig = {
     authDomain: "deventus-16a2b.firebaseapp.com",
     databaseURL: "https://deventus-16a2b.firebaseio.com",
     projectId: "deventus-16a2b",
-    storageBucket: "",
+    storageBucket: "deventus-16a2b.appspot.com",
     messagingSenderId: "949621103028"
 };
 firebase.initializeApp(firebaseConfig);
