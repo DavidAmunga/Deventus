@@ -184,6 +184,7 @@ class PhotosPage extends Component {
                 <div className="ui two buttons">
                   <Button
                     basic
+                    loading={loading}
                     color="green"
                     onClick={this.handleSetMainPhoto(photo)}
                   >

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Form, Button } from "semantic-ui-react";
 import { Field, reduxForm } from "redux-form";
 import TextArea from "../../../app/common/form/TextArea";
-import { addEventComment } from "../eventActions";
+
 
 class EventDetailedChatForm extends Component {
   handleCommentSubmit = values => {

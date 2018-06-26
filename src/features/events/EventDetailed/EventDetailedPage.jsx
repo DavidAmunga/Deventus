@@ -7,7 +7,7 @@ import EventDetailedSidebar from "./EventDetailedSidebar";
 import EventDetailedHeader from "./EventDetailedHeader";
 import { Grid } from "semantic-ui-react";
 import { connect } from "react-redux";
-import { objectToArray,createDataTree } from "../../../app/common/util/helper";
+import { objectToArray, createDataTree } from "../../../app/common/util/helper";
 import { goingToEvent, cancelGoingToEvent } from "../../user/userActions";
 import { addEventComment } from "../eventActions";
 
@@ -20,6 +20,7 @@ const mapStateToProps = (state, ownProps) => {
 
   return {
     event,
+    loading: state.async.loading,
     auth: state.firebase.auth,
     eventChat:
       !isEmpty(state.firebase.data.event_chat) &&
@@ -46,6 +47,7 @@ class EventDetailedPage extends Component {
 
   render() {
     const {
+      loading,
       event,
       auth,
       goingToEvent,
@@ -57,11 +59,12 @@ class EventDetailedPage extends Component {
       event && event.attendees && objectToArray(event.attendees);
     const isHost = event.hostUid === auth.uid;
     const isGoing = attendees && attendees.some(a => a.id === auth.uid);
-    const chatTree=!isEmpty(eventChat) && createDataTree(eventChat)
+    const chatTree = !isEmpty(eventChat) && createDataTree(eventChat);
     return (
       <Grid>
         <Grid.Column width={10}>
           <EventDetailedHeader
+            loading={loading}
             goingToEvent={goingToEvent}
             cancelGoingToEvent={cancelGoingToEvent}
             event={event}
