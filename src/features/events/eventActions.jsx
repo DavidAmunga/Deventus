@@ -118,7 +118,7 @@ export const getEventsForDashboard = lastEvent => async (
   }
 };
 
-export const addEventComment = (eventId, values,parentId) => async (
+export const addEventComment = (eventId, values, parentId) => async (
   dispatch,
   getState,
   { getFirebase }
@@ -130,7 +130,7 @@ export const addEventComment = (eventId, values,parentId) => async (
 
   let newComment = {
     displayName: profile.displayName,
-    parentId:parentId,
+    parentId: parentId,
     photoURL: profile.photoURL || "/assets/images/user.png",
     uid: user.uid,
     text: values.comment,
