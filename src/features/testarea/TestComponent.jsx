@@ -7,7 +7,7 @@ import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng
 } from "react-places-autocomplete";
-import { incrementCounterAsync, decrementCounterAsync } from "./testActions";
+import { incrementCounterAsync, decrementCounterAsync, testPermissions } from "./testActions";
 import { openModal } from "../modals/modalActions";
 
 const mapState = state => ({
@@ -18,7 +18,8 @@ const mapState = state => ({
 const actions = {
   incrementCounterAsync,
   decrementCounterAsync,
-  openModal
+  openModal,
+  testPermissions
 };
 
 // const Marker = () => <Icon name='marker' size='big' color='red'/>
@@ -59,6 +60,7 @@ class TestComponent extends Component {
     };
 
     const {
+      testPermissions,
       incrementCounterAsync,
       decrementCounterAsync,
       data,
@@ -89,6 +91,11 @@ class TestComponent extends Component {
           onClick={() => openModal("TestModal", { data: 42 })}
           color="teal"
           content="Open Modal"
+        />
+         <Button
+          onClick={testPermissions}
+          color="teal"
+          content="Test Permissions"
         />
         <br />
         <br />
