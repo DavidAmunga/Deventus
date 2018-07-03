@@ -30,7 +30,7 @@ class EventDetailedInfo extends Component {
         <Segment attached="top">
           <Grid>
             <Grid.Column width={1}>
-              <Icon size="large" color="teal" name="info" />
+              <Icon size="large" color="purple" name="info" />
             </Grid.Column>
             <Grid.Column width={15}>
               <p>{event.description}</p>
@@ -40,7 +40,7 @@ class EventDetailedInfo extends Component {
         <Segment attached>
           <Grid verticalAlign="middle">
             <Grid.Column width={1}>
-              <Icon name="calendar" size="large" color="teal" />
+              <Icon name="calendar" size="large" color="purple" />
             </Grid.Column>
             <Grid.Column width={15}>
               <span>
@@ -53,7 +53,7 @@ class EventDetailedInfo extends Component {
         <Segment attached>
           <Grid verticalAlign="middle">
             <Grid.Column width={1}>
-              <Icon name="marker" size="large" color="teal" />
+              <Icon name="marker" size="large" color="purple" />
             </Grid.Column>
             <Grid.Column width={11}>
               <span>{event.venue}</span>
@@ -61,7 +61,7 @@ class EventDetailedInfo extends Component {
             <Grid.Column width={4}>
               <Button
                 onClick={this.showMapToggle}
-                color={this.state.showMap ? "teal" : "purple"}
+                color={this.state.showMap ? "purple" : "purple"}
                 size="tiny"
                 content={this.state.showMap ? "Hide Map" : "Show Map"}
               />

@@ -28,7 +28,7 @@ const LoginForm = ({login, handleSubmit, error, socialLogin}) => {
           placeholder="password"
         />
         {error && <Label basic color='red'>{error}</Label>}
-        <Button fluid size="large" color="teal">
+        <Button fluid size="large" color="purple">
           Login
         </Button>
         <Divider horizontal>Or</Divider>

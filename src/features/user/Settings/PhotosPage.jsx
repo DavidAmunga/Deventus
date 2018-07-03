@@ -113,7 +113,7 @@ class PhotosPage extends Component {
         <Grid>
           <Grid.Row />
           <Grid.Column width={4}>
-            <Header color="teal" sub content="Step 1 - Add Photo" />
+            <Header color="purple" sub content="Step 1 - Add Photo" />
             <Dropzone onDrop={this.onDrop} multiple={false}>
               <div style={{ paddingTop: "30px", textAlign: "center" }}>
                 <Icon name="upload" size="huge" />
@@ -123,7 +123,7 @@ class PhotosPage extends Component {
           </Grid.Column>
           <Grid.Column width={1} />
           <Grid.Column width={4}>
-            <Header sub color="teal" content="Step 2 - Resize image" />
+            <Header sub color="purple" content="Step 2 - Resize image" />
             {this.state.files[0] && (
               <Cropper
                 style={{ height: 200, width: "100%" }}
@@ -142,7 +142,7 @@ class PhotosPage extends Component {
           </Grid.Column>
           <Grid.Column width={1} />
           <Grid.Column width={4}>
-            <Header sub color="teal" content="Step 3 - Preview and Upload" />
+            <Header sub color="purple" content="Step 3 - Preview and Upload" />
             {this.state.files[0] && (
               <div>
                 <Image
@@ -170,7 +170,7 @@ class PhotosPage extends Component {
         </Grid>
 
         <Divider />
-        <Header sub color="teal" content="All Photos" />
+        <Header sub color="purple" content="All Photos" />
 
         <Card.Group itemsPerRow={5}>
           <Card>

@@ -28,7 +28,7 @@ class UnauthModal extends Component {
             <Button.Group widths={4}>
               <Button
                 fluid
-                color="teal"
+                color="purple"
                 onClick={() => openModal("LoginModal")}
               >
                 Login
